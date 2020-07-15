@@ -16,11 +16,3 @@
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
-
-$router->group(['prefix' => '/api/financeiro'], function () use ($router) {
-    $router->get('/saldo', 'FinanceiroController@saldo');
-    $router->get('/extrato', 'FinanceiroController@extrato');
-    $router->get('/debito', 'FinanceiroController@debito');
-    $router->get('/credito', 'FinanceiroController@credito');
-    $router->get('/tranferencia', 'FinanceiroController@transferencia');
-});
