@@ -15,7 +15,7 @@ class CreateTableContas extends Migration
     {
         Schema::create('contas', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('cpf', 11);
+            $table->string('cpf', 11)->unique();
             $table->double('saldo', 10,2)->default(0.00);
         });
     }
