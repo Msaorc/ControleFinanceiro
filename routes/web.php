@@ -11,8 +11,14 @@
 |
 */
 
-
-
-$router->get('/', function () use ($router) {
-    return $router->app->version();
+$router->group(['prefix' => 'api'], function () use ($router) {
+    $router->group(['prefix' => 'conta'], function () use ($router) {
+        $router->post('criar', 'ContaController@create');
+        $router->get('saldo', 'ContaController@accountsBalance');
+        $router->get('saldo/{cpf}', 'ContaController@balance');
+        $router->post('debito', 'ContaController@debit');
+        $router->get('extrato', 'ContaController@extrato');
+        $router->post('credito', 'ContaController@credit');
+        $router->get('tranferencia', 'ContaController@tranferencia');
+    });
 });

@@ -1,12 +1,14 @@
 <?php
 
+namespace App;
+
 use Illuminate\Database\Eloquent\Model;
 
-class Conta extends Model
+class Operacao extends Model
 {
     public $timestamps = false;
     public $table = 'operacoes';
-    public $fillable = ['cpf', 'tipo', 'valor', 'date', 'observacao'];
+    public $fillable = ['cpf', 'tipo', 'valor', 'data', 'observacao'];
 
     public function conta()
     {
