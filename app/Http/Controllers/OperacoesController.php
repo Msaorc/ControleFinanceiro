@@ -57,7 +57,7 @@ abstract class OperacoesController
         }
 
         $this->saveRegistry($cpf, $value, $type, $note);
-        return ["message" => "Debito realizado com sucesso",
+        return ["message" => "{$type} realizado com sucesso",
                 "statusCode" => 200
         ];
     }
