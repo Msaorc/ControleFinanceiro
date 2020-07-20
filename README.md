@@ -11,7 +11,7 @@ Esta api foi desenvolvida em lumen um framework laravel mais enxuto. O projeto c
 ## Configurações
 
 ### Código Fonte
-git clone https://github.com/ValdirJunior/seller-project.git
+git clone https://github.com/Msaorc/ControleFinanceiro.git
 
 ### Banco de Dados
 Após configurado o arquivo .env, entrar na pasta raiz do projeto via terminal e executar o comando: php artisan migrate.
