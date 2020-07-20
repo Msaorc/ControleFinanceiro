@@ -183,10 +183,19 @@ abstract class OperacoesController
         $debitResponse = $this->operationAccount($cpfOrigin, floatval($value), "Debito", "Transferecia realizada para {$cpfDestiny} no valor {$value}");
         $creditResponse = $this->operationAccount($cpfDestiny, floatval($value), "Credito", "Transferecia recebida de {$cpfOrigin} no valor {$value}");
         
-        if ($debitResponse['statusCode'] <> 200 || $creditResponse['statusCode'] <> 200) {
+        if ($debitResponse['statusCode'] <> 200) {
             DB::rollBack();
             return ["sucess" => false,
-                    "message" => "Erro ao realizar tranferencia",
+                    "message" => "Erro ao realizar tranferencia. ".$debitResponse['message'],
+                    "statusCode" => 404
+            ];  
+        }
+
+        $creditResponse = $this->operationAccount($cpfDestiny, floatval($value), "Credito", "Transferecia recebida de {$cpfOrigin} no valor {$value}");        
+        if ($creditResponse['statusCode'] <> 200) {
+            DB::rollBack();
+            return ["sucess" => false,
+                    "message" => "Erro ao realizar tranferencia. ".$creditResponse['message'],
                     "statusCode" => 404
             ];  
         }
