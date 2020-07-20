@@ -17,8 +17,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
         $router->get('saldo', 'ContaController@accountsBalance');
         $router->get('saldo/{cpf}', 'ContaController@balance');
         $router->post('debito', 'ContaController@debit');
-        $router->get('extrato', 'ContaController@extrato');
+        $router->get('extrato/{cpf}', 'ContaController@extract');
         $router->post('credito', 'ContaController@credit');
-        $router->get('tranferencia', 'ContaController@tranferencia');
+        $router->post('tranferencia', 'ContaController@transfer');
     });
 });
