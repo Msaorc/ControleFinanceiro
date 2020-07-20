@@ -105,7 +105,7 @@ Entrar na pasta raiz do projeto via terminal, e executar o comando: php -S local
 ### Debito
 
 * **URL**
-  `api/conta/debito
+  `api/conta/debito`
 
 * **Method**
   `POST`
@@ -132,7 +132,7 @@ Entrar na pasta raiz do projeto via terminal, e executar o comando: php -S local
 ### Credito
 
 * **URL**
-  `api/conta/credito
+  `api/conta/credito`
 
 * **Method**
   `POST`
@@ -159,7 +159,7 @@ Entrar na pasta raiz do projeto via terminal, e executar o comando: php -S local
 ### Tranferencia
 
 * **URL**
-  `api/conta/tranferencia
+  `api/conta/tranferencia`
 
 * **Method**
   `POST`
@@ -187,7 +187,7 @@ Entrar na pasta raiz do projeto via terminal, e executar o comando: php -S local
 ### Extrato
 
 * **URL**
-  `api/conta/extrato/{cpf}
+  `api/conta/extrato/{cpf}`
 
 * **Method**
   `GET`
